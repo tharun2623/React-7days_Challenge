@@ -1,21 +1,62 @@
 /* Base Styles */
 .counter {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   margin: 50px auto;
-  padding: 30px;
-  background: #000000;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+              0 0 0 2px #3a3a3a,
+              0 0 0 4px #2a2a2a;
   text-align: center;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: #f6f6f6;
 }
 
 /* Counter Display */
 .counter__display {
   font-size: 5rem;
-  margin: 0 0 20px;
-  color: #f6f6f6;
+  margin: 0 0 30px;
+  color: #ffffff;
   font-weight: 300;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pulse {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Input Group */
+.counter__input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.counter__input {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+  font-size: 1rem;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.counter__input:focus {
+  outline: none;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2),
+              0 0 0 2px #27ae60;
 }
 
 /* Button Container */
@@ -23,17 +64,39 @@
   display: flex;
   gap: 12px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* Base Button Styles */
 .counter__btn {
-  padding: 12px 24px;
+  padding: 12px 20px;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Submit Button */
+.counter__btn--submit {
+  background: #3498db;
+  color: white;
+  min-width: 100px;
+}
+
+.counter__btn--submit:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Increment Button */
@@ -45,6 +108,19 @@
 .counter__btn--increment:hover {
   background: #2ecc71;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Decrement Button */
+.counter__btn--decrement {
+  background: #e67e22;
+  color: white;
+}
+
+.counter__btn--decrement:hover {
+  background: #d35400;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Reset Button */
@@ -56,9 +132,28 @@
 .counter__btn--reset:hover {
   background: #c0392b;
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Active State (When Clicked) */
 .counter__btn:active {
   transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .counter {
+    padding: 30px 20px;
+    margin: 30px auto;
+  }
+  
+  .counter__buttons {
+    flex-direction: column;
+  }
+  
+  .counter__btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
