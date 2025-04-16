@@ -1,10 +1,64 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Base Styles */
+.counter {
+  width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #000000;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.active {
-  color: red;
-  font-weight: bold;
+/* Counter Display */
+.counter__display {
+  font-size: 5rem;
+  margin: 0 0 20px;
+  color: #f6f6f6;
+  font-weight: 300;
+}
+
+/* Button Container */
+.counter__buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Base Button Styles */
+.counter__btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Increment Button */
+.counter__btn--increment {
+  background: #27ae60;
+  color: white;
+}
+
+.counter__btn--increment:hover {
+  background: #2ecc71;
+  transform: translateY(-2px);
+}
+
+/* Reset Button */
+.counter__btn--reset {
+  background: #e74c3c;
+  color: white;
+}
+
+.counter__btn--reset:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Active State (When Clicked) */
+.counter__btn:active {
+  transform: translateY(1px);
 }

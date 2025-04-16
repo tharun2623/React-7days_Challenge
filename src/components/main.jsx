@@ -1,23 +1,19 @@
-import React from "react";
+import React, { useState } from 'react';
 
-const Main = ({name,age,bio}) => {
 
-    return (
-        <section className="m-5">
-            <div>
-                <h2>Name:</h2>
-                <p>{name}</p>
-            </div>
-            <div>
-                <h2>Age:</h2>
-                <p>{age}</p>
-            </div>
-            <div>
-                <h2>Bio:</h2>
-                <p>{bio}</p>
-            </div>
-        </section>
-    )
-}
+const Counter = () => {
+  const [count, setCount] = useState(0);
 
-export default Main;
+  return (
+    <div className="counter">
+      <h1 className="counter__display">{count}</h1>
+      <div className="counter__buttons">
+        <button className="counter__btn counter__btn--increment" onClick={() => setCount(count + 1)}>Increment</button>
+        <button className="counter__btn counter__btn--increment" onClick={() => setCount(count - 1)}>Decrement</button>
+        <button className="counter__btn counter__btn--reset" onClick={() => setCount(0)}>Reset</button>
+      </div>
+    </div>
+  );
+};
+
+export default Counter;
