@@ -1,10 +1,40 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Custom styling for the profile card */
+.profile-card {
+  max-width: 500px;
+  margin: 2rem auto;
 }
 
-.active {
-  color: red;
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1.8rem;
   font-weight: bold;
+}
+
+.profile-item {
+  margin-bottom: 1.5rem;
+}
+
+.profile-value {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+.profile-bio {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
 }
