@@ -1,10 +1,22 @@
 import React from 'react'
 import './index.css';
-import Main from './components/main.jsx';
+import Login from './components/main.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+import Homepage from './components/homepage.jsx';
 
+const router = createBrowserRouter([
+   {
+      path: '/',
+      element: <Login/>
+   },
+   {
+      path: '/home',
+      element: <Homepage/>
+   }
+]);
 const App = () => {
-   return <Main name={"Tharun"} age={24} bio={"He is a strong and determined guy."}/>
+   return <RouterProvider router={router}/>
 }
 
 export default App
