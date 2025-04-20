@@ -183,3 +183,151 @@ input[type="password"]:focus {
   from { transform: rotate(0turn); }
   to { transform: rotate(1turn); }
 }
+
+/*Task Page*/
+/* TaskList.css */
+
+/* Main container styling */
+.task-list-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading style */
+.task-list-container h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Input and button container */
+.task-input-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Input field styling */
+.task-input-container input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.task-input-container input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Add task button */
+.task-input-container button {
+  padding: 0.75rem 1.5rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.task-input-container button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.task-input-container button:active {
+  transform: translateY(0);
+}
+
+/* Task list styling */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual task item */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.task-item:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
+}
+
+/* Task text */
+.task-text {
+  flex: 1;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+/* Delete button */
+.delete-btn {
+  padding: 0.5rem 1rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Empty state (if needed) */
+.empty-state {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .task-list-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .task-input-container {
+    flex-direction: column;
+  }
+  
+  .task-input-container button {
+    width: 100%;
+  }
+}
+
+/* Animation for task entry */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.task-item {
+  animation: fadeIn 0.3s ease-out forwards;
+}
