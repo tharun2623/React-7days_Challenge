@@ -1,10 +1,22 @@
-import React from 'react'
-import './index.css';
-import Main from './components/main.jsx';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
+import StarRating from './components/Starrating';
 
-const App = () => {
-   return <Main name={"Tharun"} age={24} bio={"He is a strong and determined guy."}/>
+function App() {
+  const [rating, setRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0); // For hover effect
+
+  return (
+    <div style={{ padding: '20px' }}>
+      <h1>Rate this product:</h1>
+      <StarRating 
+        rating={rating}
+        hoverRating={hoverRating}
+        onRate={(newRating) => setRating(newRating)}
+        onHover={(hoveredRating) => setHoverRating(hoveredRating)}
+      />
+      <p>Current rating: {rating} {rating === 1 ? 'star' : 'stars'}</p>
+    </div>
+  );
 }
 
-export default App
+export default App;
