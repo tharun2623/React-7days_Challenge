@@ -8,3 +8,134 @@ body {
   color: red;
   font-weight: bold;
 }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.d-flex p {
+  color: white; 
+}
+/* Override Bootstrap's .card and add custom styles */
+.custom-card {
+  max-width: 250px;
+  min-width: 200px;
+  margin: 15px;
+  transition: all 0.3s ease;
+  border: none !important;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-container {
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+}
+
+.product-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.card-body {
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* CartPage.css */
+
+.cart-page {
+  padding: 2rem 0;
+}
+
+.cart-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #333;
+}
+
+.cart-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.cart-item-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.cart-item-card:hover {
+  transform: translateY(-5px);
+}
+
+.cart-item-img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background: #f9f9f9;
+}
+
+.cart-item-details {
+  padding: 1rem;
+  text-align: center;
+}
+
+.cart-item-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.cart-item-price {
+  font-size: 1.1rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.cart-item-quantity {
+  font-size: 1rem;
+  color: #666;
+}
