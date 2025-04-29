@@ -1,21 +1,18 @@
-import React from "react";
+import React,{ useRef } from "react";
 
-const Main = ({name,age,bio}) => {
+const Main = () => {
+    const inputRef = useRef(null);
+    
+    const handleClick = () => {
+        inputRef.current.focus();
+        console.log(inputRef.current.value);
+    };
 
     return (
         <section className="m-5">
-            <div>
-                <h2>Name:</h2>
-                <p>{name}</p>
-            </div>
-            <div>
-                <h2>Age:</h2>
-                <p>{age}</p>
-            </div>
-            <div>
-                <h2>Bio:</h2>
-                <p>{bio}</p>
-            </div>
+            <h1>Welcome to Git Challenge</h1>
+            <input ref={inputRef} type="text" className="form-control" placeholder="Enter your name"/>
+            <button className="btn btn-primary mt-3" onClick={handleClick}>Submit</button>
         </section>
     )
 }
